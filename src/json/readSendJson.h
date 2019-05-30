@@ -1,5 +1,3 @@
-#define TOPICO_SENSORS "/projetoIoT/sensors"
-
 #include <ArduinoJson.h>
 #include "../connection/mqtt.h"
 #include "../sensors/dht11.h"

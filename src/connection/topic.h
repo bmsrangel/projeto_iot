@@ -6,7 +6,7 @@
 #define TOPICO_HUM_DHT11 "/projetoIoT/dht/hum"
 #define TOPICO_HUM_SOLO "/projetoIoT/soil"
 #define TOPICO_LIGHT "/projetoIoT/light"
-// #define TOPICO_SENSORS "/projetoIoT/sensors"
+#define TOPICO_SENSORS "/projetoIoT/sensors"
 
 int statusBomba = HIGH;
 

@@ -1,8 +1,4 @@
 #include "config/config.h"
-// #include "connection/mqtt.h"
-// #include "sensors/dht11.h"
-// #include "sensors/lightsensor.h"
-// #include "sensors/soil.h"
 #include <Arduino.h>
 #include "json/readSendJson.h"
 
