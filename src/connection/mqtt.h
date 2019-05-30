@@ -1,7 +1,7 @@
-#include "connection/wifi.h"
-#include "topic.h"
 #include <ArduinoJson.h>
 #include <PubSubClient.h>
+#include "connection/wifi.h"
+#include "topic.h"
 
 PubSubClient MQTTClient(wifiClient);
 
@@ -33,22 +33,6 @@ void startMQTT() {
   MQTTClient.setServer(MQTT_SERVER, MQTT_PORT);
   MQTTClient.setCallback(callback);
 }
-
-// void callback(char *topic, byte *payload, unsigned int length) {
-//   DynamicJsonDocument doc(512);
-
-//   DeserializationError err = deserializeJson(doc, payload);
-
-//   if (err) {
-//     Serial.print(F("Função deserializeJson() do callback falhou com erro:
-//     ")); Serial.println(err.c_str()); return;
-//   }
-
-//   String msg = doc["bomba"];
-//   Serial.println(msg);
-//   tratarTopico(topic, msg);
-//   serializeJson(doc, Serial);
-// }
 
 void callback(char *topic, byte *payload, unsigned int length) {
   DynamicJsonDocument doc(512);

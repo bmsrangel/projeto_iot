@@ -1,9 +1,10 @@
 #include "config/config.h"
-#include "connection/mqtt.h"
-#include "sensors/dht11.h"
-#include "sensors/lightsensor.h"
-#include "sensors/soil.h"
+// #include "connection/mqtt.h"
+// #include "sensors/dht11.h"
+// #include "sensors/lightsensor.h"
+// #include "sensors/soil.h"
 #include <Arduino.h>
+#include "json/readSendJson.h"
 
 unsigned long readTime;
 
@@ -30,9 +31,7 @@ void loop() {
 
     if (millis() > readTime + 6000) {
       readTime = millis();
-      readSensorDHT11();
-      readSoilSensor();
-      readLightSensor();
+      publishTopics();
     }
 
     MQTTClient.loop();
